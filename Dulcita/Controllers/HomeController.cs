@@ -18,7 +18,12 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Sobre()
+    {
+        return View();
+    }
+
+    public IActionResult Contato()
     {
         return View();
     }
