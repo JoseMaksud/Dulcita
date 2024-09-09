@@ -82,3 +82,7 @@ header {
 .fill {
     background: #ff007f !important;
 }
+
+.about__video .play-btn {
+    background-color: #ff007f !important;
+}

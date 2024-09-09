@@ -23,6 +23,10 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Cardapio()
+    {
+        return View();
+    }
     public IActionResult Contato()
     {
         return View();
