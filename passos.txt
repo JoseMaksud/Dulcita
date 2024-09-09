@@ -6,7 +6,7 @@ Criar o projeto
 dotnet new mvc -o Dulcita
 
 NuGet Gallery
-    Shift + Ctlr + P
+    Shift + Ctrl + P
     - Pesquisar e instalar:
         Microsoft.EntityFrameworkCore.Tools
         Microsoft.VisualStudio.Web.CodeGeneration.Design
