@@ -3461,7 +3461,7 @@ ol {
     font-size: 14px;
     color: #111111;
     list-style: none;
-    display: inline-block;
+    display: none;
     margin-right: 30px;
     position: relative;
     padding: 2px 0;
@@ -3524,7 +3524,7 @@ ol {
   }
 
   .offcanvas__cart {
-    margin-bottom: 30px;
+    display: none;
   }
 
   .offcanvas__cart__links {
