@@ -1,16 +1,20 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Dulcita.Models;
+using Dulcita.Data;
+using Dulcita.ViewModels;
 
 namespace Dulcita.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, AppDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -25,7 +29,11 @@ public class HomeController : Controller
 
     public IActionResult Cardapio()
     {
-        return View();
+          HomeVM home = new() {
+            Produtos = _context.Produtos
+                .ToList(),
+        };
+        return View(home); 
     }
     public IActionResult Contato()
     {
