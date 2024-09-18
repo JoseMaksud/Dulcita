@@ -34,11 +34,10 @@
                         <form action="#">
                             <select>
                                 <option value="">Categorias</option>
-                                <option value="">Donuts Tradicionais</option>
-                                <option value="">Donuts Recheados</option>
-                                <option value="">Donuts Salgados</option>
-                                <option value="">Mini Donuts</option>
-                                <option value="">Bebidas</option>
+                                @foreach (var categoria in Model.Categorias)
+                                {
+                                <option value="">@categoria.Nome</option>
+                                }
                             </select>
                             <input type="text" placeholder="Pesquisar">
                             <button type="submit"><i class="fa fa-search"></i></button>
