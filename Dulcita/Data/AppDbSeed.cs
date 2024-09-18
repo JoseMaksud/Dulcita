@@ -48,7 +48,7 @@ public class AppDbSeed
                 Preco = 8.90M,
                 PrecoDesconto = 8.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/1.jpg",
+                Imagem = @"img/produtos/1.jpg",
             },
             new Produto() {
                 Id = 2,
@@ -57,7 +57,7 @@ public class AppDbSeed
                 Preco = 10.90M,
                 PrecoDesconto = 10.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/2.jpg",
+                Imagem = @"img/produtos/2.jpg",
             },
             new Produto() {
                 Id = 3,
@@ -66,7 +66,7 @@ public class AppDbSeed
                 Preco = 11.90M,
                 PrecoDesconto = 11.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/3.jpg",
+                Imagem = @"img/produtos/3.jpg",
             },
             new Produto() {
                 Id = 4,
@@ -75,7 +75,7 @@ public class AppDbSeed
                 Preco = 11.90M,
                 PrecoDesconto = 11.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/4.jpg",
+                Imagem = @"img/produtos/4.jpg",
             },
             new Produto() {
                 Id = 5,
@@ -84,7 +84,7 @@ public class AppDbSeed
                 Preco = 11.90M,
                 PrecoDesconto = 11.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/5.jpg",
+                Imagem = @"img/produtos/5.jpg",
             },
             new Produto() {
                 Id = 6,
@@ -93,7 +93,7 @@ public class AppDbSeed
                 Preco = 11.90M,
                 PrecoDesconto = 11.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/6.jpg",
+                Imagem = @"img/produtos/6.jpg",
             },
             new Produto() {
                 Id = 7,
@@ -102,7 +102,7 @@ public class AppDbSeed
                 Preco = 14.90M,
                 PrecoDesconto = 14.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/7.jpg",
+                Imagem = @"img/produtos/7.jpg",
             },
             new Produto() {
                 Id = 8,
@@ -111,7 +111,7 @@ public class AppDbSeed
                 Preco = 14.90M,
                 PrecoDesconto = 14.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/8.jpg",
+                Imagem = @"img/produtos/8.jpg",
             },
             new Produto() {
                 Id = 9,
@@ -120,7 +120,7 @@ public class AppDbSeed
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/9.jpg",
+                Imagem = @"img/produtos/9.jpg",
             },
             new Produto() {
                 Id = 10,
@@ -129,7 +129,7 @@ public class AppDbSeed
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/10.jpg",
+                Imagem = @"img/produtos/10.jpg",
             },
             new Produto() {
                 Id = 11,
@@ -138,7 +138,7 @@ public class AppDbSeed
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/11.jpg",
+                Imagem = @"img/produtos/11.jpg",
             },
             new Produto() {
                 Id = 12,
@@ -147,7 +147,7 @@ public class AppDbSeed
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/12.jpg",
+                Imagem = @"img/produtos/12.jpg",
             },
             new Produto() {
                 Id = 13,
@@ -156,7 +156,7 @@ public class AppDbSeed
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
                 CategoriaId = 1,
-                Imagem = @"images/produtos/13.jpg",
+                Imagem = @"img/produtos/13.jpg",
             },
             new Produto() {
                 Id = 14,
@@ -165,7 +165,7 @@ public class AppDbSeed
                 Preco = 19.90M,
                 PrecoDesconto = 19.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/14.jpg",
+                Imagem = @"img/produtos/14.jpg",
             },
             new Produto() {
                 Id = 15,
@@ -174,7 +174,7 @@ public class AppDbSeed
                 Preco = 19.90M,
                 PrecoDesconto = 19.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/15.jpg",
+                Imagem = @"img/produtos/15.jpg",
             },
             new Produto() {
                 Id = 16,
@@ -183,7 +183,7 @@ public class AppDbSeed
                 Preco = 19.90M,
                 PrecoDesconto = 19.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/16.jpg",
+                Imagem = @"img/produtos/16.jpg",
             },
             new Produto() {
                 Id = 17,
@@ -192,7 +192,7 @@ public class AppDbSeed
                 Preco = 19.90M,
                 PrecoDesconto = 19.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/17.jpg",
+                Imagem = @"img/produtos/17.jpg",
             },
             new Produto() {
                 Id = 18,
@@ -201,7 +201,7 @@ public class AppDbSeed
                 Preco = 18.90M,
                 PrecoDesconto = 18.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/18.jpg",
+                Imagem = @"img/produtos/18.jpg",
             },
             new Produto() {
                 Id = 19,
@@ -210,7 +210,7 @@ public class AppDbSeed
                 Preco = 18.90M,
                 PrecoDesconto = 18.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/19.jpg",
+                Imagem = @"img/produtos/19.jpg",
             },
             new Produto() {
                 Id = 20,
@@ -219,7 +219,7 @@ public class AppDbSeed
                 Preco = 18.90M,
                 PrecoDesconto = 18.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/20.jpg",
+                Imagem = @"img/produtos/20.jpg",
             },
             new Produto() {
                 Id = 21,
@@ -228,7 +228,7 @@ public class AppDbSeed
                 Preco = 17.90M,
                 PrecoDesconto = 17.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/21.jpg",
+                Imagem = @"img/produtos/21.jpg",
             },
             new Produto() {
                 Id = 22,
@@ -237,7 +237,7 @@ public class AppDbSeed
                 Preco = 15.90M,
                 PrecoDesconto = 15.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/22.jpg",
+                Imagem = @"img/produtos/22.jpg",
             },
             new Produto() {
                 Id = 23,
@@ -246,7 +246,7 @@ public class AppDbSeed
                 Preco = 15.90M,
                 PrecoDesconto = 15.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/23.jpg",
+                Imagem = @"img/produtos/23.jpg",
             },
             new Produto() {
                 Id = 24,
@@ -255,7 +255,7 @@ public class AppDbSeed
                 Preco = 15.90M,
                 PrecoDesconto = 15.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/24.jpg",
+                Imagem = @"img/produtos/24.jpg",
             },
             new Produto() {
                 Id = 25,
@@ -264,7 +264,7 @@ public class AppDbSeed
                 Preco = 15.90M,
                 PrecoDesconto = 15.90M,
                 CategoriaId = 2,
-                Imagem = @"images/produtos/25.jpg",
+                Imagem = @"img/produtos/25.jpg",
             },
             new Produto() {
                 Id = 26,
@@ -273,7 +273,7 @@ public class AppDbSeed
                 Preco = 16.90M,
                 PrecoDesconto = 16.90M,
                 CategoriaId = 3,
-                Imagem = @"images/produtos/26.jpg",
+                Imagem = @"img/produtos/26.jpg",
             },
             new Produto() {
                 Id = 27,
@@ -282,7 +282,7 @@ public class AppDbSeed
                 Preco = 16.90M,
                 PrecoDesconto = 16.90M,
                 CategoriaId = 3,
-                Imagem = @"images/produtos/27.jpg",
+                Imagem = @"img/produtos/27.jpg",
             },
             new Produto() {
                 Id = 28,
@@ -291,7 +291,7 @@ public class AppDbSeed
                 Preco = 16.90M,
                 PrecoDesconto = 16.90M,
                 CategoriaId = 3,
-                Imagem = @"images/produtos/28.jpg",
+                Imagem = @"img/produtos/28.jpg",
             },
             new Produto() {
                 Id = 29,
@@ -300,7 +300,7 @@ public class AppDbSeed
                 Preco = 16.90M,
                 PrecoDesconto = 16.90M,
                 CategoriaId = 3,
-                Imagem = @"images/produtos/29.jpg",
+                Imagem = @"img/produtos/29.jpg",
             },
             new Produto() {
                 Id = 30,
@@ -309,7 +309,7 @@ public class AppDbSeed
                 Preco = 0M,
                 PrecoDesconto = 0M,
                 CategoriaId = 4,
-                Imagem = @"images/produtos/30.jpg",
+                Imagem = @"img/produtos/30.jpg",
             },
             new Produto() {
                 Id = 31,
@@ -318,7 +318,7 @@ public class AppDbSeed
                 Preco = 17.90M,
                 PrecoDesconto = 17.90M,
                 CategoriaId = 4,
-                Imagem = @"images/produtos/31.jpg",
+                Imagem = @"img/produtos/31.jpg",
             },
             new Produto() {
                 Id = 32,
@@ -327,7 +327,7 @@ public class AppDbSeed
                 Preco = 21.90M,
                 PrecoDesconto = 21.90M,
                 CategoriaId = 4,
-                Imagem = @"images/produtos/32.jpg",
+                Imagem = @"img/produtos/32.jpg",
             },
             new Produto() {
                 Id = 33,
@@ -336,7 +336,7 @@ public class AppDbSeed
                 Preco = 4.00M,
                 PrecoDesconto = 4.00M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/33.jpg",
+                Imagem = @"img/produtos/33.jpg",
             },
             new Produto() {
                 Id = 34,
@@ -345,7 +345,7 @@ public class AppDbSeed
                 Preco = 4.50M,
                 PrecoDesconto = 4.50M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/34.jpg",
+                Imagem = @"img/produtos/34.jpg",
             },
             new Produto() {
                 Id = 35,
@@ -354,7 +354,7 @@ public class AppDbSeed
                 Preco = 6.00M,
                 PrecoDesconto = 6.00M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/35.jpg",
+                Imagem = @"img/produtos/35.jpg",
             },
             new Produto() {
                 Id = 36,
@@ -363,7 +363,7 @@ public class AppDbSeed
                 Preco = 6.00M,
                 PrecoDesconto = 6.00M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/36.jpg",
+                Imagem = @"img/produtos/36.jpg",
             },
             new Produto() {
                 Id = 37,
@@ -372,7 +372,7 @@ public class AppDbSeed
                 Preco = 11.00M,
                 PrecoDesconto = 11.00M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/37.jpg",
+                Imagem = @"img/produtos/37.jpg",
             },
             new Produto() {
                 Id = 38,
@@ -381,7 +381,7 @@ public class AppDbSeed
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/38.jpg",
+                Imagem = @"img/produtos/38.jpg",
             },
             new Produto() {
                 Id = 39,
@@ -390,7 +390,7 @@ public class AppDbSeed
                 Preco = 17.90M,
                 PrecoDesconto = 17.90M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/39.jpg",
+                Imagem = @"img/produtos/39.jpg",
             },
             new Produto() {
                 Id = 40,
@@ -399,7 +399,7 @@ public class AppDbSeed
                 Preco = 4.90M,
                 PrecoDesconto = 4.90M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/40.jpg",
+                Imagem = @"img/produtos/40.jpg",
             },
             new Produto() {
                 Id = 41,
@@ -408,7 +408,7 @@ public class AppDbSeed
                 Preco = 9.90M,
                 PrecoDesconto = 9.90M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/41.jpg",
+                Imagem = @"img/produtos/41.jpg",
             },
             new Produto() {
                 Id = 42,
@@ -417,7 +417,7 @@ public class AppDbSeed
                 Preco = 9.90M,
                 PrecoDesconto = 9.90M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/42.jpg",
+                Imagem = @"img/produtos/42.jpg",
             },
             new Produto() {
                 Id = 43,
@@ -426,7 +426,7 @@ public class AppDbSeed
                 Preco = 9.90M,
                 PrecoDesconto = 9.90M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/43.jpg",
+                Imagem = @"img/produtos/43.jpg",
             },
             new Produto() {
                 Id = 44,
@@ -435,7 +435,7 @@ public class AppDbSeed
                 Preco = 9.90M,
                 PrecoDesconto = 9.90M,
                 CategoriaId = 5,
-                Imagem = @"images/produtos/44.jpg",
+                Imagem = @"img/produtos/44.jpg",
             },
         };
         builder.Entity<Produto>().HasData(produtos);
