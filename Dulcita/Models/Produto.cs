@@ -30,9 +30,5 @@ public class Produto
     [StringLength(300)]
     public string Imagem { get; set; }
 
-    [Display(Name = "Categoria")]
-    [Required(ErrorMessage = "Por Favor, informe a Categoria")]
-    public int CategoriaId { get; set; }
-    [ForeignKey("CategoriaId")]
-    public Categoria Categoria { get; set; }
+    public ICollection<ProdutoCategoria> Categorias { get; set; }
 }

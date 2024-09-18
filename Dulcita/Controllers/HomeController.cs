@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Dulcita.Models;
 using Dulcita.Data;
 using Dulcita.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dulcita.Controllers;
 
@@ -28,13 +29,17 @@ public class HomeController : Controller
     }
 
     public IActionResult Cardapio()
-    {
-          HomeVM home = new() {
+     {
+        HomeVM home = new() {
+            Categorias = _context.Categorias.ToList(),
             Produtos = _context.Produtos
+                .Include(p => p.Categorias)
+                .ThenInclude(t => t.Categoria)
                 .ToList(),
         };
-        return View(home); 
+        return View(home);
     }
+
     public IActionResult Contato()
     {
         return View();
