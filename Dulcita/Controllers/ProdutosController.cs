@@ -22,8 +22,7 @@ namespace Dulcita.Controllers
         // GET: Produtos
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Produtos.Include(p => p.Categoria);
-            return View(await appDbContext.ToListAsync());
+            return View(await _context.Produtos.ToListAsync());
         }
 
         // GET: Produtos/Details/5
@@ -35,7 +34,6 @@ namespace Dulcita.Controllers
             }
 
             var produto = await _context.Produtos
-                .Include(p => p.Categoria)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {
@@ -48,7 +46,6 @@ namespace Dulcita.Controllers
         // GET: Produtos/Create
         public IActionResult Create()
         {
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Nome");
             return View();
         }
 
@@ -57,7 +54,7 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem,CategoriaId")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +62,6 @@ namespace Dulcita.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
             return View(produto);
         }
 
@@ -82,7 +78,6 @@ namespace Dulcita.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
             return View(produto);
         }
 
@@ -91,7 +86,7 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem,CategoriaId")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem")] Produto produto)
         {
             if (id != produto.Id)
             {
@@ -118,7 +113,6 @@ namespace Dulcita.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
             return View(produto);
         }
 
@@ -131,7 +125,6 @@ namespace Dulcita.Controllers
             }
 
             var produto = await _context.Produtos
-                .Include(p => p.Categoria)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {

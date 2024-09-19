@@ -22,8 +22,7 @@ namespace Dulcita.Controllers
         // GET: Categorias
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Categorias.Include(c => c.CategoriaMae);
-            return View(await appDbContext.ToListAsync());
+            return View(await _context.Categorias.ToListAsync());
         }
 
         // GET: Categorias/Details/5
@@ -35,7 +34,6 @@ namespace Dulcita.Controllers
             }
 
             var categoria = await _context.Categorias
-                .Include(c => c.CategoriaMae)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (categoria == null)
             {
@@ -48,7 +46,6 @@ namespace Dulcita.Controllers
         // GET: Categorias/Create
         public IActionResult Create()
         {
-            ViewData["CategoriaMaeId"] = new SelectList(_context.Categorias, "Id", "Nome");
             return View();
         }
 
@@ -57,7 +54,7 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Foto,Filtrar,CategoriaMaeId")] Categoria categoria)
+        public async Task<IActionResult> Create([Bind("Id,Nome")] Categoria categoria)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +62,6 @@ namespace Dulcita.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaMaeId"] = new SelectList(_context.Categorias, "Id", "Nome", categoria.CategoriaMaeId);
             return View(categoria);
         }
 
@@ -82,7 +78,6 @@ namespace Dulcita.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoriaMaeId"] = new SelectList(_context.Categorias, "Id", "Nome", categoria.CategoriaMaeId);
             return View(categoria);
         }
 
@@ -91,7 +86,7 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Foto,Filtrar,CategoriaMaeId")] Categoria categoria)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome")] Categoria categoria)
         {
             if (id != categoria.Id)
             {
@@ -118,7 +113,6 @@ namespace Dulcita.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaMaeId"] = new SelectList(_context.Categorias, "Id", "Nome", categoria.CategoriaMaeId);
             return View(categoria);
         }
 
@@ -131,7 +125,6 @@ namespace Dulcita.Controllers
             }
 
             var categoria = await _context.Categorias
-                .Include(c => c.CategoriaMae)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (categoria == null)
             {

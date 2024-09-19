@@ -24,9 +24,6 @@
 								<th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
 									@Html.DisplayNameFor(model => model.Nome)
 								</th>
-								<th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-									@Html.DisplayNameFor(model => model.CategoriaMae)
-								</th>
 								<th
 									class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
 									Filtro</th>
@@ -41,14 +38,6 @@
 								<tr>
 									<td class="text-dark text-sm">
 										@Html.DisplayFor(modelItem => item.Nome)
-									</td>
-									<td class="text-dark text-sm">
-										@Html.DisplayFor(modelItem => item.CategoriaMae.Nome)
-									</td>
-									<td class="align-middle text-center text-sm">
-										<span class='badge badge-sm bg-gradient-@(item.Filtrar? "success" : "secondary")'>
-											@(item.Filtrar ? "Sim" : "Não")
-										</span>
 									</td>
 									<td class="align-middle text-center">
 										<a asp-action="Edit" asp-route-id="@item.Id" title="Alterar">
