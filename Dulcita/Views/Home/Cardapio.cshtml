@@ -1,6 +1,7 @@
 @model Dulcita.ViewModels.HomeVM
+
 @{
-    ViewData["Title"] = "Cardapio";
+    ViewData["Title"] = "Cardápio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -31,57 +32,82 @@
             <div class="row">
                 <div class="col-lg-7 col-md-7">
                     <div class="shop__option__search">
-                        <form action="#">
-                            <select>
+                        <form id="searchForm" method="get" action="@Url.Action("Cardapio", "Home")">
+                            <select name="categoriaId" onchange="this.form.submit()">
                                 <option value="">Categorias</option>
                                 @foreach (var categoria in Model.Categorias)
                                 {
-                                <option value="">@categoria.Nome</option>
+                                    if (Model.CurrentCategoriaId.HasValue && categoria.Id == Model.CurrentCategoriaId.Value)
+                                    {
+                                        <option value="@categoria.Id" selected>@categoria.Nome</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@categoria.Id">@categoria.Nome</option>
+                                    }
                                 }
+
                             </select>
-                            <input type="text" placeholder="Pesquisar">
+                            <input type="text" name="search" placeholder="Pesquisar" id="searchInput"
+                                value="@Model.CurrentSearchTerm" />
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row">
-            @foreach (var produto in Model.Produtos)
+            @if (Model.Produtos != null && Model.Produtos.Count > 0)
             {
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/@produto.Imagem">
-                            @foreach(var categoria in produto.Categorias) {
-                            <div class="product__label">
-                                <span>@categoria.Categoria.Nome</span>
+                @foreach (var produto in Model.Produtos)
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="/@produto.Imagem">
+                                @if (produto.Categorias != null && produto.Categorias.Count > 0)
+                                {
+                                    <div class="product__label">
+                                        @foreach (var categoria in produto.Categorias)
+                                        {
+                                            <span>@categoria.Categoria.Nome</span>
+                                        }
+                                    </div>
+                                }
                             </div>
-                            }
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">@produto.Nome</a></h6>
-                            <div class="product__item__price">@produto.Preco</div>
-                            <div class="cart_add">
-                                <a href="#">Comprar</a>
+                            <div class="product__item__text">
+                                <h6><a href="#">@produto.Nome</a></h6>
+                                <div class="product__item__price">@produto.Preco</div>
+                                <div class="cart_add">
+                                    <a href="#">Comprar</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
+            }
+            else
+            {
+                <p>Nenhum produto encontrado.</p>
             }
         </div>
+
+        <!-- Paginação -->
         <div class="shop__last__option">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="shop__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#"><span class="arrow_carrot-right"></span></a>
+                        @for (int i = 1; i <= Model.TotalPages; i++)
+                        {
+                            <a href="@Url.Action("Cardapio", new { page = i, searchTerm = Model.CurrentSearchTerm, categoriaId = Model.CurrentCategoriaId })"
+                                class="@(i == Model.CurrentPage ? "active" : "")">@i</a>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="shop__last__text">
-                        <p>Showing 1-9 of 10 results</p>
+                        <p>Mostrando @((Model.CurrentPage - 1) * 9 + 1)-@(Model.CurrentPage * 9 > Model.TotalProdutos ?
+                            Model.TotalProdutos : Model.CurrentPage * 9) de @Model.TotalProdutos resultados</p>
                     </div>
                 </div>
             </div>
@@ -89,3 +115,13 @@
     </div>
 </section>
 <!-- Shop Section End -->
+
+<script>
+    let timer;
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            document.getElementById('searchForm').submit();
+        }, 500); // O formulário será enviado 500ms após o último input
+    });
+</script>
