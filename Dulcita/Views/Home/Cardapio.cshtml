@@ -46,10 +46,8 @@
                                         <option value="@categoria.Id">@categoria.Nome</option>
                                     }
                                 }
-
                             </select>
-                            <input type="text" name="search" placeholder="Pesquisar" id="searchInput"
-                                value="@Model.CurrentSearchTerm" />
+                            <input type="text" name="searchTerm" placeholder="Pesquisar" id="searchInput" value="@Model.CurrentSearchTerm" />
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
@@ -100,7 +98,7 @@
                         @for (int i = 1; i <= Model.TotalPages; i++)
                         {
                             <a href="@Url.Action("Cardapio", new { page = i, searchTerm = Model.CurrentSearchTerm, categoriaId = Model.CurrentCategoriaId })"
-                                class="@(i == Model.CurrentPage ? "active" : "")">@i</a>
+                               class="@(i == Model.CurrentPage ? "active" : "")">@i</a>
                         }
                     </div>
                 </div>
