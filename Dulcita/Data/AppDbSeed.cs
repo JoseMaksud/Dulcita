@@ -618,7 +618,7 @@ public class AppDbSeed
             new Usuario(){
                 UsuarioId = users[0].Id,
                 Nome = "Dulcita",
-                Foto = "/img/usuarios/avatar.png"
+                Foto = @"img/usuarios/avatar.png"
             },
         };
         builder.Entity<Usuario>().HasData(usuarios);

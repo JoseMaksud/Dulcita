@@ -3,7 +3,7 @@
 @{
     var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
     var user = _context.Usuarios.Find(userId);
-    var foto = user != null ? user.Foto ?? Url.Content("~/img/usuarios/no-photo.jpg") : Url.Content("~/img/usuarios/no-photo.jpg");
+    var foto = user != null ? user.Foto ?? Url.Content("~/img/usuarios/avatar.png") : Url.Content("~/img/usuarios/avatar.png");
 }
 
 <li class="nav-item d-flex align-items-center">
