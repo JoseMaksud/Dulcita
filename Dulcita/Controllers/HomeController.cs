@@ -74,6 +74,11 @@ public class HomeController : Controller
         return View(home);
     }
 
+    public IActionResult Details() 
+    {
+        return View();
+    }
+
     public IActionResult Contato()
     {
         return View();
