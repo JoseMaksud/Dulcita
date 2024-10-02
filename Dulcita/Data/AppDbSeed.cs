@@ -42,7 +42,7 @@ public class AppDbSeed
                 Ingredientes = "Donut passado no açúcar refinado com canela em pó.",
                 Preco = 8.90M,
                 PrecoDesconto = 8.90M,
-                Imagem = @"img/produtos/1.jpg",
+                Imagem = @"img/produtos/1.png",
             },
             new Produto() {
                 Id = 2,
@@ -50,7 +50,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de chocolate ao leite e granulado.",
                 Preco = 10.90M,
                 PrecoDesconto = 10.90M,
-                Imagem = @"img/produtos/2.jpg",
+                Imagem = @"img/produtos/2.png",
             },
             new Produto() {
                 Id = 3,
@@ -58,7 +58,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de chocolate branco tingido de azul e granulado colorido.",
                 Preco = 11.90M,
                 PrecoDesconto = 11.90M,
-                Imagem = @"img/produtos/3.jpg",
+                Imagem = @"img/produtos/3.png",
             },
             new Produto() {
                 Id = 4,
@@ -66,7 +66,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de chocolate branco tingido de rosa e granulado colorido.",
                 Preco = 11.90M,
                 PrecoDesconto = 11.90M,
-                Imagem = @"img/produtos/4.jpg",
+                Imagem = @"img/produtos/4.png",
             },
             new Produto() {
                 Id = 5,
@@ -74,7 +74,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de chocolate meio amargo.",
                 Preco = 11.90M,
                 PrecoDesconto = 11.90M,
-                Imagem = @"img/produtos/5.jpg",
+                Imagem = @"img/produtos/5.png",
             },
             new Produto() {
                 Id = 6,
@@ -82,7 +82,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de chocolate ao leite e coberto com confete.",
                 Preco = 11.90M,
                 PrecoDesconto = 11.90M,
-                Imagem = @"img/produtos/6.jpg",
+                Imagem = @"img/produtos/6.png",
             },
             new Produto() {
                 Id = 7,
@@ -90,7 +90,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura generosa de Nutella.",
                 Preco = 14.90M,
                 PrecoDesconto = 14.90M,
-                Imagem = @"img/produtos/7.jpg",
+                Imagem = @"img/produtos/7.png",
             },
             new Produto() {
                 Id = 8,
@@ -98,7 +98,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de ganache de chocolate branco, fios de chocolate ao leite e ouro branco picado.",
                 Preco = 14.90M,
                 PrecoDesconto = 14.90M,
-                Imagem = @"img/produtos/8.jpg",
+                Imagem = @"img/produtos/8.png",
             },
             new Produto() {
                 Id = 9,
@@ -106,7 +106,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de brigadeiro de leite ninho finalizado com leite em pó.",
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
-                Imagem = @"img/produtos/9.jpg",
+                Imagem = @"img/produtos/9.png",
             },
             new Produto() {
                 Id = 10,
@@ -114,7 +114,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de ganache de chocolate ao leite finalizado com KitKat.",
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
-                Imagem = @"img/produtos/10.jpg",
+                Imagem = @"img/produtos/10.png",
             },
             new Produto() {
                 Id = 11,
@@ -122,7 +122,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de chocolate meio amargo, fios de recheio de morango e Stikadinho.",
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
-                Imagem = @"img/produtos/11.jpg",
+                Imagem = @"img/produtos/11.png",
             },
             new Produto() {
                 Id = 12,
@@ -130,7 +130,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de brigadeiro de churros polvilhado com açúcar e canela.",
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
-                Imagem = @"img/produtos/12.jpg",
+                Imagem = @"img/produtos/12.png",
             },
             new Produto() {
                 Id = 13,
@@ -138,7 +138,7 @@ public class AppDbSeed
                 Ingredientes = "Cobertura de doce de leite.",
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
-                Imagem = @"img/produtos/13.jpg",
+                Imagem = @"img/produtos/13.png",
             },
             new Produto() {
                 Id = 14,
@@ -146,7 +146,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado de Nutella e ganache branca coberto com chocolate ao leite e Kinder bueno.",
                 Preco = 19.90M,
                 PrecoDesconto = 19.90M,
-                Imagem = @"img/produtos/14.jpg",
+                Imagem = @"img/produtos/14.png",
             },
             new Produto() {
                 Id = 15,
@@ -154,7 +154,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado com brigadeiro de Ferrero coberto com chocolate ao leite, amendoim e bombom Ferrero.",
                 Preco = 19.90M,
                 PrecoDesconto = 19.90M,
-                Imagem = @"img/produtos/15.jpg",
+                Imagem = @"img/produtos/15.png",
             },
             new Produto() {
                 Id = 16,
@@ -162,7 +162,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado com brigadeiro coberto com chocolate meio amargo e uma bola de sorvete.",
                 Preco = 19.90M,
                 PrecoDesconto = 19.90M,
-                Imagem = @"img/produtos/16.jpg",
+                Imagem = @"img/produtos/16.png",
             },
             new Produto() {
                 Id = 17,
@@ -170,7 +170,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado de Nutella com cobertura de Nutella.",
                 Preco = 19.90M,
                 PrecoDesconto = 19.90M,
-                Imagem = @"img/produtos/17.jpg",
+                Imagem = @"img/produtos/17.png",
             },
             new Produto() {
                 Id = 18,
@@ -178,7 +178,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado com brigadeiro de Ninho coberto com Nutella, finalizado com chocoball.",
                 Preco = 18.90M,
                 PrecoDesconto = 18.90M,
-                Imagem = @"img/produtos/18.jpg",
+                Imagem = @"img/produtos/18.png",
             },
             new Produto() {
                 Id = 19,
@@ -186,7 +186,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado de ganache de chocolate branco com banana e casquinha de chocolate branco.",
                 Preco = 18.90M,
                 PrecoDesconto = 18.90M,
-                Imagem = @"img/produtos/19.jpg",
+                Imagem = @"img/produtos/19.png",
             },
             new Produto() {
                 Id = 20,
@@ -194,7 +194,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado com brigadeiro de Ninho e uvas frescas, coberto com ganache de chocolate ao leite, uvas e polvilhado com leite Ninho.",
                 Preco = 18.90M,
                 PrecoDesconto = 18.90M,
-                Imagem = @"img/produtos/20.jpg",
+                Imagem = @"img/produtos/20.png",
             },
             new Produto() {
                 Id = 21,
@@ -202,7 +202,7 @@ public class AppDbSeed
                 Ingredientes = "Recheio cremoso de Ouro Branco, coberto com chocolate branco, bombom de Ouro Branco picado e fios de chocolate ao leite.",
                 Preco = 17.90M,
                 PrecoDesconto = 17.90M,
-                Imagem = @"img/produtos/21.jpg",
+                Imagem = @"img/produtos/21.png",
             },
             new Produto() {
                 Id = 22,
@@ -210,7 +210,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado de brigadeiro de Ninho, coberto e polvilhado com leite em pó.",
                 Preco = 15.90M,
                 PrecoDesconto = 15.90M,
-                Imagem = @"img/produtos/22.jpg",
+                Imagem = @"img/produtos/22.png",
             },
             new Produto() {
                 Id = 23,
@@ -218,7 +218,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado com creme de morango, coberto com chocolate meio amargo, fios de creme de morango e Stikadinho.",
                 Preco = 15.90M,
                 PrecoDesconto = 15.90M,
-                Imagem = @"img/produtos/23.jpg",
+                Imagem = @"img/produtos/23.png",
             },
             new Produto() {
                 Id = 24,
@@ -226,7 +226,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado com brigadeiro de Oreo, coberto com chocolate branco e Oreo.",
                 Preco = 15.90M,
                 PrecoDesconto = 15.90M,
-                Imagem = @"img/produtos/24.jpg",
+                Imagem = @"img/produtos/24.png",
             },
             new Produto() {
                 Id = 25,
@@ -234,7 +234,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado com doce de leite e coberto com doce de leite.",
                 Preco = 15.90M,
                 PrecoDesconto = 15.90M,
-                Imagem = @"img/produtos/25.jpg",
+                Imagem = @"img/produtos/25.png",
             },
             new Produto() {
                 Id = 26,
@@ -242,7 +242,7 @@ public class AppDbSeed
                 Ingredientes = "Donut coberto com delicioso frango cremoso desfiado e catupiry original.",
                 Preco = 16.90M,
                 PrecoDesconto = 16.90M,
-                Imagem = @"img/produtos/26.jpg",
+                Imagem = @"img/produtos/26.png",
             },
             new Produto() {
                 Id = 27,
@@ -250,7 +250,7 @@ public class AppDbSeed
                 Ingredientes = "Donut coberto com catupiry original e cubos de bacon frito.",
                 Preco = 16.90M,
                 PrecoDesconto = 16.90M,
-                Imagem = @"img/produtos/27.jpg",
+                Imagem = @"img/produtos/27.png",
             },
             new Produto() {
                 Id = 28,
@@ -258,7 +258,7 @@ public class AppDbSeed
                 Ingredientes = "Donut coberto com cheddar e cubos de bacon frito.",
                 Preco = 16.90M,
                 PrecoDesconto = 16.90M,
-                Imagem = @"img/produtos/28.jpg",
+                Imagem = @"img/produtos/28.png",
             },
             new Produto() {
                 Id = 29,
@@ -266,7 +266,7 @@ public class AppDbSeed
                 Ingredientes = "Donut coberto com cheddar e Doritos.",
                 Preco = 16.90M,
                 PrecoDesconto = 16.90M,
-                Imagem = @"img/produtos/29.jpg",
+                Imagem = @"img/produtos/29.png",
             },
             new Produto() {
                 Id = 30,
@@ -274,7 +274,7 @@ public class AppDbSeed
                 Ingredientes = "Feito mediante encomenda de uma semana antes.",
                 Preco = 0M,
                 PrecoDesconto = 0M,
-                Imagem = @"img/produtos/30.jpg",
+                Imagem = @"img/produtos/30.png",
             },
             new Produto() {
                 Id = 31,
@@ -282,7 +282,7 @@ public class AppDbSeed
                 Ingredientes = "Donut personalizado com desenho e frase.",
                 Preco = 17.90M,
                 PrecoDesconto = 17.90M,
-                Imagem = @"img/produtos/31.jpg",
+                Imagem = @"img/produtos/31.png",
             },
             new Produto() {
                 Id = 32,
@@ -290,7 +290,7 @@ public class AppDbSeed
                 Ingredientes = "Donut personalizado com desenho e frase, recheado com Nutella, Ninho, Morango ou Doce de leite.",
                 Preco = 21.90M,
                 PrecoDesconto = 21.90M,
-                Imagem = @"img/produtos/32.jpg",
+                Imagem = @"img/produtos/32.png",
             },
             new Produto() {
                 Id = 33,
@@ -298,7 +298,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 4.00M,
                 PrecoDesconto = 4.00M,
-                Imagem = @"img/produtos/33.jpg",
+                Imagem = @"img/produtos/33.png",
             },
             new Produto() {
                 Id = 34,
@@ -306,7 +306,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 4.50M,
                 PrecoDesconto = 4.50M,
-                Imagem = @"img/produtos/34.jpg",
+                Imagem = @"img/produtos/34.png",
             },
             new Produto() {
                 Id = 35,
@@ -314,7 +314,7 @@ public class AppDbSeed
                 Ingredientes = "Coca-cola, Coca-cola zero, Fanta, Sprite, Guaraná Antártica, Schweppes.",
                 Preco = 6.00M,
                 PrecoDesconto = 6.00M,
-                Imagem = @"img/produtos/35.jpg",
+                Imagem = @"img/produtos/35.png",
             },
             new Produto() {
                 Id = 36,
@@ -322,7 +322,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 6.00M,
                 PrecoDesconto = 6.00M,
-                Imagem = @"img/produtos/36.jpg",
+                Imagem = @"img/produtos/36.png",
             },
             new Produto() {
                 Id = 37,
@@ -330,7 +330,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 11.00M,
                 PrecoDesconto = 11.00M,
-                Imagem = @"img/produtos/37.jpg",
+                Imagem = @"img/produtos/37.png",
             },
             new Produto() {
                 Id = 38,
@@ -338,7 +338,7 @@ public class AppDbSeed
                 Ingredientes = "Limão siciliano, frutas vermelhas, maçã verde, kiwi.",
                 Preco = 13.90M,
                 PrecoDesconto = 13.90M,
-                Imagem = @"img/produtos/38.jpg",
+                Imagem = @"img/produtos/38.png",
             },
             new Produto() {
                 Id = 39,
@@ -346,7 +346,7 @@ public class AppDbSeed
                 Ingredientes = "Nutella, Ovomaltine, Morango, Ninho com Nutella, Doce de leite, Oreo.",
                 Preco = 17.90M,
                 PrecoDesconto = 17.90M,
-                Imagem = @"img/produtos/39.jpg",
+                Imagem = @"img/produtos/39.png",
             },
             new Produto() {
                 Id = 40,
@@ -354,7 +354,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 4.90M,
                 PrecoDesconto = 4.90M,
-                Imagem = @"img/produtos/40.jpg",
+                Imagem = @"img/produtos/40.png",
             },
             new Produto() {
                 Id = 41,
@@ -362,7 +362,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 9.90M,
                 PrecoDesconto = 9.90M,
-                Imagem = @"img/produtos/41.jpg",
+                Imagem = @"img/produtos/41.png",
             },
             new Produto() {
                 Id = 42,
@@ -370,7 +370,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 9.90M,
                 PrecoDesconto = 9.90M,
-                Imagem = @"img/produtos/42.jpg",
+                Imagem = @"img/produtos/42.png",
             },
             new Produto() {
                 Id = 43,
@@ -378,7 +378,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 9.90M,
                 PrecoDesconto = 9.90M,
-                Imagem = @"img/produtos/43.jpg",
+                Imagem = @"img/produtos/43.png",
             },
             new Produto() {
                 Id = 44,
@@ -386,7 +386,7 @@ public class AppDbSeed
                 Ingredientes = "",
                 Preco = 9.90M,
                 PrecoDesconto = 9.90M,
-                Imagem = @"img/produtos/44.jpg",
+                Imagem = @"img/produtos/44.png",
             },
         };
         builder.Entity<Produto>().HasData(produtos);
