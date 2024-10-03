@@ -74,9 +74,33 @@ public class HomeController : Controller
         return View(home);
     }
 
-    public IActionResult Details() 
+    public IActionResult Details(int id) 
     {
-        return View();
+        // Obtém o produto atual
+    var produto = _context.Produtos
+        .Include(p => p.Categorias)
+        .ThenInclude(pc => pc.Categoria)
+        .SingleOrDefault(p => p.Id == id);
+
+    if (produto == null)
+    {
+        return NotFound();
+    }
+
+    // Busca produtos relacionados pela mesma categoria, excluindo o produto atual
+    var produtosRelacionados = _context.Produtos
+        .Include(p => p.Categorias)
+        .Where(p => p.Categorias.Any(c => produto.Categorias.Select(pc => pc.CategoriaId).Contains(c.CategoriaId)) && p.Id != produto.Id)
+        .ToList();
+
+    // Passa os dados para a ViewModel
+    var viewModel = new DetailsVM
+    {
+        Produto = produto,
+        ProdutosRelacionados = produtosRelacionados
+    };
+
+    return View(viewModel);
     }
 
     public IActionResult Contato()

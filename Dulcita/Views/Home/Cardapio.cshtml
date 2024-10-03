@@ -47,7 +47,8 @@
                                     }
                                 }
                             </select>
-                            <input type="text" name="searchTerm" placeholder="Pesquisar" id="searchInput" value="@Model.CurrentSearchTerm" />
+                            <input type="text" name="searchTerm" placeholder="Pesquisar" id="searchInput"
+                                value="@Model.CurrentSearchTerm" />
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
@@ -62,24 +63,27 @@
                 {
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="/@produto.Imagem">
-                                @if (produto.Categorias != null && produto.Categorias.Count > 0)
-                                {
-                                    <div class="product__label">
-                                        @foreach (var categoria in produto.Categorias)
-                                        {
-                                            <span>@categoria.Categoria.Nome</span>
-                                        }
-                                    </div>
-                                }
-                            </div>
-                            <div class="product__item__text">
-                                <h6><a href="#">@produto.Nome</a></h6>
-                                <div class="product__item__price">R$@produto.Preco</div>
-                                <div class="cart_add">
-                                    <a href="#">Comprar</a>
+                            <a href="@Url.Action("Details", "Home", new { id = produto.Id })">
+                                <div class="product__item__pic set-bg" data-setbg="/@produto.Imagem">
+                                    @if (produto.Categorias != null && produto.Categorias.Count > 0)
+                                    {
+                                        <div class="product__label">
+                                            @foreach (var categoria in produto.Categorias)
+                                            {
+                                                <span>@categoria.Categoria.Nome</span>
+                                            }
+                                        </div>
+                                    }
                                 </div>
-                            </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">@produto.Nome</a></h6>
+                                    <div class="product__item__price">R$@produto.Preco</div>
+                                    <div class="cart_add">
+                                        <a href="#">Comprar</a>
+                                    </div>
+                                </div>
+
+                            </a>
                         </div>
                     </div>
                 }
@@ -98,7 +102,7 @@
                         @for (int i = 1; i <= Model.TotalPages; i++)
                         {
                             <a href="@Url.Action("Cardapio", new { page = i, searchTerm = Model.CurrentSearchTerm, categoriaId = Model.CurrentCategoriaId })"
-                               class="@(i == Model.CurrentPage ? "active" : "")">@i</a>
+                                class="@(i == Model.CurrentPage ? "active" : "")">@i</a>
                         }
                     </div>
                 </div>
