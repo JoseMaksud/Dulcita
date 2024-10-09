@@ -28,6 +28,12 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Carrinho()
+    {
+        return View();
+    }
+
+
     public IActionResult Cardapio(string searchTerm, int? categoriaId, int page = 1, int pageSize = 9)
     {
         // Obter a lista de categorias
