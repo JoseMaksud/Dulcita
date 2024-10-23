@@ -79,7 +79,7 @@
                                     <h6><a href="#">@produto.Nome</a></h6>
                                     <div class="product__item__price">R$@produto.Preco</div>
                                     <div class="cart_add">
-                                        <a href="#">Comprar</a>
+                                        <a href="@Url.Action("Details", "Home", new { id = produto.Id })">Comprar</a>
                                     </div>
                                 </div>
 
