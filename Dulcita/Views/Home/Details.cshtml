@@ -53,10 +53,15 @@
                     <div class="product__details__option">
                         <div class="quantity">
                             <div class="pro-qty">
-                                <input type="text" value="1">
+                                <input type="number" id="quantidade" value="1" min="1" readonly>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">Comprar</a>
+                        <form asp-action="Adicionar" asp-controller="Carrinho" method="post" id="formAdicionar">
+                            <input type="hidden" name="produtoId" value="@Model.Produto.Id" />
+                            <input type="hidden" name="quantidade" id="hiddenQuantidade" value="1" />
+                            <a href="#" class="primary-btn"
+                                onclick="event.preventDefault(); document.getElementById('formAdicionar').submit();">Comprar</a>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -108,7 +113,9 @@
                             </div>
                         </a>
                         <div class="product__item__text">
-                            <h6><a href="@Url.Action("Details", "Home", new { id = produtoRelacionado.Id })">@produtoRelacionado.Nome</a></h6>
+                            <h6><a
+                                    href="@Url.Action("Details", "Home", new { id = produtoRelacionado.Id })">@produtoRelacionado.Nome</a>
+                            </h6>
                             <div class="product__item__price">R$ @produtoRelacionado.Preco.ToString("F2")</div>
                             <div class="cart_add">
                                 <a href="#">Adicionar ao carrinho</a>
