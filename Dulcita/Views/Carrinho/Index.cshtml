@@ -30,59 +30,62 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="shopping__cart__table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Produto</th>
-                                <th>Quantidade</th>
-                                <th>Total</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.Itens)
-                            {
+                <form asp-action="AtualizarCarrinho" method="post">
+                    <div class="shopping__cart__table">
+                        <table>
+                            <thead>
                                 <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
-                                            <img src="@item.Produto.Imagem" style="width: 90px; height:90px" alt="@item.Produto.Nome">
-                                        </div>
-                                        <div class="product__cart__item__text">
-                                            <h6>@item.Produto.Nome</h6>
-                                            <h5>R$@item.Produto.Preco</h5>
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="@item.Quantidade" readonly>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">R$@item.Total</td>
-                                    <td class="cart__close">
-                                        <a asp-action="Remover" asp-route-produtoId="@item.Produto.Id">
-                                            <span class="icon_close"></span>
-                                        </a>
-                                    </td>
+                                    <th>Produto</th>
+                                    <th>Quantidade</th>
+                                    <th>Total</th>
+                                    <th></th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="continue__btn">
-                            <a href="@Url.Action("Cardapio", "Home")">Continuar Comprando</a>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Itens)
+                                {
+                                    <tr>
+                                        <td class="product__cart__item">
+                                            <div class="product__cart__item__pic">
+                                                <img src="@item.Produto.Imagem" style="width: 90px; height:90px" alt="@item.Produto.Nome">
+                                            </div>
+                                            <div class="product__cart__item__text">
+                                                <h6>@item.Produto.Nome</h6>
+                                                <h5>R$@item.Produto.Preco</h5>
+                                            </div>
+                                        </td>
+                                        <td class="quantity__item">
+                                            <div class="quantity">
+                                                <input type="hidden" name="produtoIds" value="@item.Produto.Id" />
+                                                <div class="pro-qty">
+                                                    <input type="number" name="quantidades" value="@item.Quantidade" min="1" style="width: 60px;">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cart__price">R$@item.Total</td>
+                                        <td class="cart__close">
+                                            <a asp-action="Remover" asp-route-produtoId="@item.Produto.Id">
+                                                <span class="icon_close"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn">
+                                <a href="@Url.Action("Cardapio", "Home")">Continuar Comprando</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn update__btn">
+                                <a href="javascript:void(0);" onclick="this.closest('form').submit();"><i class="fa fa-spinner"></i> Atualizar Carrinho</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="continue__btn update__btn">
-                            <a href="#"><i class="fa fa-spinner"></i> Atualizar Carrinho</a>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
             <div class="col-lg-4 pt-5">
                 <div class="cart__total bg-white" style="border: 1px solid #ff007f; border-radius: 5px; box-shadow: 4px 4px #ff8ac4">

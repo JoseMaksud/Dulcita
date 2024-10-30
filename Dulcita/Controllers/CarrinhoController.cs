@@ -88,7 +88,7 @@ namespace Dulcita.Controllers
             // Adiciona os itens do carrinho com apenas os nomes
             foreach (var item in carrinho.Itens)
             {
-                mensagem += $"* {item.Produto.Nome} *\n"; // Apenas o nome do donut
+                mensagem += $"* {item.Produto.Nome}  - Quantidade: {item.Quantidade}\n";
             }
 
             mensagem +=
@@ -98,5 +98,37 @@ namespace Dulcita.Controllers
 
             return Uri.EscapeDataString(mensagem); // Codifica para URL no final da mensagem
         }
+
+        [HttpPost]
+        public IActionResult AtualizarCarrinho(int[] produtoIds, int[] quantidades)
+        {
+            var carrinho = SessionHelper.GetCarrinho(HttpContext.Session);
+
+            for (int i = 0; i < produtoIds.Length; i++)
+            {
+                var produtoId = produtoIds[i];
+                var novaQuantidade = quantidades[i];
+
+                var item = carrinho.Itens.FirstOrDefault(i => i.Produto.Id == produtoId);
+
+                if (item != null)
+                {
+                    if (novaQuantidade > 0)
+                    {
+                        item.Quantidade = novaQuantidade;
+                    }
+                    else
+                    {
+                        // Remove o item se a quantidade for zero ou negativa
+                        carrinho.Itens.Remove(item);
+                    }
+                }
+            }
+
+            SessionHelper.SetCarrinho(HttpContext.Session, carrinho);
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
