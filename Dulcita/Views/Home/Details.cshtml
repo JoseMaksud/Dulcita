@@ -59,7 +59,7 @@
                         <form asp-action="Adicionar" asp-controller="Carrinho" method="post" id="formAdicionar">
                             <input type="hidden" name="produtoId" value="@Model.Produto.Id" />
                             <input type="hidden" name="quantidade" id="hiddenQuantidade" value="1" />
-                            <button type="submit" class="primary-btn" onclick="updateHiddenQuantidade()">Comprar</button>
+                            <button style="border: none;" type="submit" class="primary-btn" onclick="updateHiddenQuantidade()">Comprar</button>
                         </form>
                     </div>
                 </div>
