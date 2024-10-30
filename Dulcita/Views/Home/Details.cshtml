@@ -53,14 +53,13 @@
                     <div class="product__details__option">
                         <div class="quantity">
                             <div class="pro-qty">
-                                <input type="number" id="quantidade" value="1" min="1" readonly>
+                                <input type="number" id="quantidade" value="1" min="1" />
                             </div>
                         </div>
                         <form asp-action="Adicionar" asp-controller="Carrinho" method="post" id="formAdicionar">
                             <input type="hidden" name="produtoId" value="@Model.Produto.Id" />
                             <input type="hidden" name="quantidade" id="hiddenQuantidade" value="1" />
-                            <a href="#" class="primary-btn"
-                                onclick="event.preventDefault(); document.getElementById('formAdicionar').submit();">Comprar</a>
+                            <button type="submit" class="primary-btn" onclick="updateHiddenQuantidade()">Comprar</button>
                         </form>
                     </div>
                 </div>
@@ -87,6 +86,15 @@
     </div>
 </section>
 <!-- Shop Details Section End -->
+
+<!-- Script para atualizar o campo oculto de quantidade -->
+<script>
+    function updateHiddenQuantidade() {
+        var quantidade = document.getElementById('quantidade').value;
+        document.getElementById('hiddenQuantidade').value = quantidade;
+    }
+</script>
+
 <!-- Related Products Section Begin -->
 <section class="related-products spad">
     <div class="container">
