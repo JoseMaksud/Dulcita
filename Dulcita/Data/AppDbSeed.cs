@@ -270,14 +270,33 @@ public class AppDbSeed
             },
             new Produto() {
                 Id = 30,
-                Nome = "Mini Donuts",
-                Ingredientes = "Feito mediante encomenda de uma semana antes.",
-                Preco = 0M,
-                PrecoDesconto = 0M,
+                Nome = "Mini Donuts(Sem Recheio)",
+                Ingredientes = "Feito mediante encomenda de uma semana antes.<br />" +
+                   "Sabores: Ninho, Nutella, Morango e Doce de Leite.<br />" +
+                   "Entre 50 e 99 unidades R$2,50<br />" +
+                   "Abaixo de 29 unidades R$3,50<br />" +
+                   "Entre 30 a 49 unidades R$3,50<br />" +
+                   "Entre 50 e 99 unidades R$2,50<br />" +
+                   "+ de 100 unidades R$2,00",
+                Preco = 3.50M,
+                PrecoDesconto = 3.50M,
                 Imagem = @"img/produtos/30.png",
             },
             new Produto() {
                 Id = 31,
+                Nome = "Mini Donuts(Com Recheio)",
+                Ingredientes = "Feito mediante encomenda de uma semana antes.<br />" +
+                   "Sabores: Ninho, Nutella, Morango e Doce de Leite.<br />" +
+                   "Abaixo de 29 unidades R$5,00.<br />" +
+                   "Entre 30 a 49 unidades R$5,00.<br />" +
+                   "Entre 50 e 99 unidades R$4,00.<br />" +
+                   "+ de 100 unidades R$3,00.",
+                Preco = 5.00M,
+                PrecoDesconto = 5.00M,
+                Imagem = @"img/produtos/30.png",
+            },
+            new Produto() {
+                Id = 32,
                 Nome = "Donuts Flork (coberto)",
                 Ingredientes = "Donut personalizado com desenho e frase.",
                 Preco = 17.90M,
@@ -285,7 +304,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/31.png",
             },
             new Produto() {
-                Id = 32,
+                Id = 33,
                 Nome = "Donuts Flork (recheado)",
                 Ingredientes = "Donut personalizado com desenho e frase, recheado com Nutella, Ninho, Morango ou Doce de leite.",
                 Preco = 21.90M,
@@ -293,7 +312,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/32.png",
             },
             new Produto() {
-                Id = 33,
+                Id = 34,
                 Nome = "Água mineral",
                 Ingredientes = "",
                 Preco = 4.00M,
@@ -301,7 +320,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/33.png",
             },
             new Produto() {
-                Id = 34,
+                Id = 35,
                 Nome = "Água com gás",
                 Ingredientes = "",
                 Preco = 4.50M,
@@ -309,7 +328,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/34.png",
             },
             new Produto() {
-                Id = 35,
+                Id = 36,
                 Nome = "Refrigerante lata",
                 Ingredientes = "Coca-cola, Coca-cola zero, Fanta, Sprite, Guaraná Antártica, Schweppes.",
                 Preco = 6.00M,
@@ -317,7 +336,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/35.png",
             },
             new Produto() {
-                Id = 36,
+                Id = 37,
                 Nome = "Del vale lata",
                 Ingredientes = "",
                 Preco = 6.00M,
@@ -325,7 +344,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/36.png",
             },
             new Produto() {
-                Id = 37,
+                Id = 38,
                 Nome = "Monster",
                 Ingredientes = "",
                 Preco = 11.00M,
@@ -333,7 +352,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/37.png",
             },
             new Produto() {
-                Id = 38,
+                Id = 39,
                 Nome = "Soda italiana 200ml",
                 Ingredientes = "Limão siciliano, frutas vermelhas, maçã verde, kiwi.",
                 Preco = 13.90M,
@@ -341,7 +360,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/38.png",
             },
             new Produto() {
-                Id = 39,
+                Id = 40,
                 Nome = "Milk shake 400ml",
                 Ingredientes = "Nutella, Ovomaltine, Morango, Ninho com Nutella, Doce de leite, Oreo.",
                 Preco = 17.90M,
@@ -349,7 +368,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/39.png",
             },
             new Produto() {
-                Id = 40,
+                Id = 41,
                 Nome = "Toddynho",
                 Ingredientes = "",
                 Preco = 4.90M,
@@ -357,7 +376,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/40.png",
             },
             new Produto() {
-                Id = 41,
+                Id = 42,
                 Nome = "Alpino 270ml",
                 Ingredientes = "",
                 Preco = 9.90M,
@@ -365,7 +384,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/41.png",
             },
             new Produto() {
-                Id = 42,
+                Id = 43,
                 Nome = "Nescau 270ml",
                 Ingredientes = "",
                 Preco = 9.90M,
@@ -373,7 +392,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/42.png",
             },
             new Produto() {
-                Id = 43,
+                Id = 44,
                 Nome = "Neston 270ml",
                 Ingredientes = "",
                 Preco = 9.90M,
@@ -381,7 +400,7 @@ public class AppDbSeed
                 Imagem = @"img/produtos/43.png",
             },
             new Produto() {
-                Id = 44,
+                Id = 45,
                 Nome = "Nescafé 270ml",
                 Ingredientes = "",
                 Preco = 9.90M,
