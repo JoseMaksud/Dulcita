@@ -178,7 +178,7 @@ public class AppDbSeed
                 Ingredientes = "Recheado com brigadeiro de Ninho coberto com Nutella, finalizado com chocoball.",
                 Preco = 18.90M,
                 PrecoDesconto = 18.90M,
-                Imagem = @"img/produtos/18.png",
+                Imagem = @"img/produtos/45.png",
             },
             new Produto() {
                 Id = 19,
