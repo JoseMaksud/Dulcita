@@ -8,14 +8,14 @@
 	<div class="col-lg-8 mx-auto">
 		<div class="card my-4">
 			<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <div
-                    class="bg-gradient-warning shadow-primary border-radius-lg py-4 d-flex justify-content-between align-items-center">
-                    <h5 class="text-white text-capitalize m-0 ps-3">@ViewData["Title"]</h5>
-                    <a class="text-white text-capitalize ps-3 align-items-center d-flex me-4" asp-action="Create">
-                        <i class="material-icons opacity-10 me-2">add</i> Adicionar
-                    </a>
-                </div>
-            </div>
+				<div
+					class="bg-gradient-warning shadow-primary border-radius-lg py-4 d-flex justify-content-between align-items-center">
+					<h5 class="text-white text-capitalize m-0 ps-3">@ViewData["Title"]</h5>
+					<a class="text-white text-capitalize ps-3 align-items-center d-flex me-4" asp-action="Create">
+						<i class="material-icons opacity-10 me-2">add</i> Adicionar
+					</a>
+				</div>
+			</div>
 			<div class="card-body pb-2">
 				<div class="table-responsive p-0">
 					<table id='DataTable' class="table table-striped align-items-center mb-0 w-100">
@@ -58,32 +58,36 @@
 </div>
 
 <style>
-  .bg-gradient-warning {
-    background: #ff007f !important;  
-  }
-  .shadow-warning {
-    box-shadow: none !important; 
-  }
-  .btn {
-    box-shadow: none !important;
-  }
-}
+	.bg-gradient-warning {
+		background: #ff007f !important;
+	}
+
+	.shadow-warning {
+		box-shadow: none !important;
+	}
+
+	.btn {
+		box-shadow: none !important;
+	}
+	}
 </style>
 
+<script type="text/javascript"></script>
 @section Scripts {
-    <script>
-        let datatable = new DataTable('#DataTable', {
-            language: {
-                url: '../../lib/datatables/pt-BR.json'
-            },
-            initComplete: function (settings, json) {
-                document.querySelector('.dt-length').classList.add('text-xs');
-                document.querySelector('.dt-search').classList.add('text-xs');
-                document.querySelector('.dt-info').classList.add('text-xs');
-                document.querySelector('.dt-paging').classList.add('text-xs');
+	<script>
+		let datatable = new DataTable('#DataTable', {
+			language: {
+				url: '../../lib/datatables/pt-BR.json'
+			},
+			initComplete: function (settings, json) {
+				document.querySelector('.dt-length').classList.add('text-xs');
+				document.querySelector('.dt-search').classList.add('text-xs');
+				document.querySelector('.dt-info').classList.add('text-xs');
+				document.querySelector('.dt-paging').classList.add('text-xs');
 				document.querySelector('label[for="dt-length-0"]').classList.add('text-xs');
-                document.querySelector('label[for="dt-search-0"]').classList.add('text-xs');
-            }
-        });
-    </script>
+				document.querySelector('label[for="dt-search-0"]').classList.add('text-xs');
+			}
+		});
+		charset = "utf-8" src = "https://cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json"
+	</script>
 }
