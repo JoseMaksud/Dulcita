@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 d-flex justify-content-center">
-                        <img id="Preview" src='@(Model.Imagem ?? Url.Content("~/img/sem-Imagem.jfif"))' class="w-75" alt="Imagem" onclick="changeImage()">
+                        <img id="Preview" src='~/@(Model.Imagem ?? Url.Content("~/img/sem-foto.jfif"))' class="w-75" alt="Imagem" onclick="changeImage()">
                         <input type="hidden" asp-for="Imagem">
                         <input type="file" id="Arquivo" name="Arquivo" accept=".jpg,.jpeg,.png,.gif,.jfif" hidden>
                     </div>
