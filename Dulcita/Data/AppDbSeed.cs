@@ -544,7 +544,7 @@ public class AppDbSeed
                  },
             new ProdutoCategoria() {
                 ProdutoNumero = 33,
-                 CategoriaId = 5
+                 CategoriaId = 4
                  },
             new ProdutoCategoria() {
                 ProdutoNumero = 34,

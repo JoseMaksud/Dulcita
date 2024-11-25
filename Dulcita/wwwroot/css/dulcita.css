@@ -175,3 +175,11 @@ header {
         width: 320px;
     }
 }
+
+.footer {
+    text-align: center;
+}
+
+.footer__about {
+    text-align: center;
+}
