@@ -54,16 +54,41 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Nome,Ingredientes,Preco,Imagem")] Produto produto, IFormFile Arquivo)
         {
             if (ModelState.IsValid)
             {
+                if (Arquivo != null && Arquivo.Length > 0)
+                {
+                    var caminhoImagens = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/produtos");
+
+                    if (!Directory.Exists(caminhoImagens))
+                    {
+                        Directory.CreateDirectory(caminhoImagens);
+                    }
+
+
+                    var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(Arquivo.FileName);
+                    var caminhoArquivo = Path.Combine(caminhoImagens, nomeArquivo);
+
+
+                    using (var stream = new FileStream(caminhoArquivo, FileMode.Create))
+                    {
+                        await Arquivo.CopyToAsync(stream);
+                    }
+
+
+                    produto.Imagem = $"img/produtos/{nomeArquivo}";
+                }
+
                 _context.Add(produto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(produto);
         }
+
 
         // GET: Produtos/Edit/5
         public async Task<IActionResult> Edit(int? id)
