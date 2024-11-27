@@ -50,6 +50,17 @@
                         <input type="file" id="Arquivo" name="Arquivo" accept=".jpg,.jpeg,.png,.gif,.jfif" hidden>
                     </div>
 
+                    <div class="col-12 mb-3">
+                        <label for="CategoriasSelecionadas" class="form-label">Categorias</label>
+                        <select id="CategoriasSelecionadas" name="CategoriasSelecionadas" multiple class="form-control">
+                            @foreach (var categoria in ViewData["Categorias"] as SelectList)
+                            {
+                                <option value="@categoria.Value">@categoria.Text</option>
+                            }
+                        </select>
+                    </div>
+
+
                     <div class="mb-3">
                         <input type="submit" value="Salvar" class="btn btn-success me-3" />
                         <a asp-action="Index" class="btn btn-danger">Cancelar</a>
@@ -67,24 +78,26 @@
             document.querySelector("input[type='file']").click();
         }
 
-            document.querySelector("input[type='file']").addEventListener('change', function () {
-                    if (this.files && this.files[0]) {
-                        var img = document.getElementById("Preview");
-                        img.src = URL.createObjectURL(this.files[0]);
-                    }
-                });
+        document.querySelector("input[type='file']").addEventListener('change', function () {
+            if (this.files && this.files[0]) {
+                var img = document.getElementById("Preview");
+                img.src = URL.createObjectURL(this.files[0]);
+            }
+        });
 
     </script>
 }
 <style>
-  .bg-gradient-warning {
-    background: #ff007f !important;  
-  }
-  .shadow-warning {
-    box-shadow: none !important; 
-  }
-  .btn {
-    box-shadow: none !important;
-  }
-}
+    .bg-gradient-warning {
+        background: #ff007f !important;
+    }
+
+    .shadow-warning {
+        box-shadow: none !important;
+    }
+
+    .btn {
+        box-shadow: none !important;
+    }
+    }
 </style>
