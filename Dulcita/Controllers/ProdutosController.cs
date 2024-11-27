@@ -126,7 +126,7 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem")] Produto produto, IFormFile Arquivo)
         {
             if (id != produto.Id)
             {
@@ -137,6 +137,29 @@ namespace Dulcita.Controllers
             {
                 try
                 {
+                    if (Arquivo != null && Arquivo.Length > 0)
+                    {
+                        var caminhoImagens = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/produtos");
+                        if (!Directory.Exists(caminhoImagens))
+                        {
+                            Directory.CreateDirectory(caminhoImagens);
+                        }
+
+                        // Nome único para o novo arquivo
+                        var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(Arquivo.FileName);
+                        var caminhoArquivo = Path.Combine(caminhoImagens, nomeArquivo);
+
+                        // Salvar o novo arquivo
+                        using (var stream = new FileStream(caminhoArquivo, FileMode.Create))
+                        {
+                            await Arquivo.CopyToAsync(stream);
+                        }
+
+                        // Atualizar o caminho da nova imagem no modelo
+                        produto.Imagem = $"img/produtos/{nomeArquivo}";
+                    }
+                    // Caso nenhuma nova imagem seja enviada, o campo `Imagem` mantém o valor atual.
+
                     _context.Update(produto);
                     await _context.SaveChangesAsync();
                 }
