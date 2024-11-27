@@ -589,6 +589,10 @@ public class AppDbSeed
             new ProdutoCategoria() {
                 ProdutoNumero = 44,
                  CategoriaId = 5
+                 },
+            new ProdutoCategoria() {
+                ProdutoNumero = 45,
+                 CategoriaId = 5
                  }
         };
         builder.Entity<ProdutoCategoria>().HasData(produtoCategorias);

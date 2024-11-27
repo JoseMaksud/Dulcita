@@ -24,9 +24,11 @@
                                 <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                                     Nome
                                 </th>
-                                <th
-                                    class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 text-start">
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 text-start">
                                     Preço
+                                </th>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Categorias
                                 </th>
                                 <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                                     Ações
@@ -42,6 +44,12 @@
                                     </td>
                                     <td class="text-dark text-sm text-start">
                                         @Html.DisplayFor(modelItem => item.Preco)
+                                    </td>
+                                    <td class="text-dark text-sm">
+                                        @foreach (var produtoCategoria in item.Categorias)
+                                        {
+                                            <span class="badge bg-primary">@produtoCategoria.Categoria.Nome</span>
+                                        }
                                     </td>
                                     <td>
                                         <a asp-action="Edit" asp-route-id="@item.Id" title="Alterar">
@@ -76,7 +84,7 @@
     .btn {
         box-shadow: none !important;
     }
-    }
+
 </style>
 
 @section Scripts

@@ -22,7 +22,12 @@ namespace Dulcita.Controllers
         // GET: Produtos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Produtos.ToListAsync());
+            var produtos = await _context.Produtos
+        .Include(p => p.Categorias)
+        .ThenInclude(pc => pc.Categoria)
+        .ToListAsync();
+
+            return View(produtos);
         }
 
         // GET: Produtos/Details/5
