@@ -44,9 +44,21 @@
                                 <span asp-validation-for="Preco" class="text-danger text-sm"></span>
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <label for="CategoriasSelecionadas" class="form-label">Categorias</label>
+                            <select id="CategoriasSelecionadas" name="CategoriasSelecionadas" multiple
+                                class="form-select">
+                                @foreach (var categoria in ViewData["Categorias"] as MultiSelectList)
+                                {
+                                    <option value="@categoria.Value" selected="@categoria.Selected">@categoria.Text</option>
+                                }
+                            </select>
+                        </div>
+
                     </div>
                     <div class="col-lg-4 col-md-3 d-flex justify-content-center">
-                        <img id="Preview" src='~/@(Model.Imagem ?? Url.Content("~/img/sem-foto.jfif"))' class="w-75" alt="Imagem" onclick="changeImage()">
+                        <img id="Preview" src='~/@(Model.Imagem ?? Url.Content("~/img/sem-foto.jfif"))' class="w-75"
+                            alt="Imagem" onclick="changeImage()">
                         <input type="hidden" asp-for="Imagem">
                         <input type="file" id="Arquivo" name="Arquivo" accept=".jpg,.jpeg,.png,.gif,.jfif" hidden>
                     </div>
@@ -63,16 +75,18 @@
 </div>
 
 <style>
-  .bg-gradient-warning {
-    background: #ff007f !important;  
-  }
-  .shadow-warning {
-    box-shadow: none !important; 
-  }
-  .btn {
-    box-shadow: none !important;
-  }
-}
+    .bg-gradient-warning {
+        background: #ff007f !important;
+    }
+
+    .shadow-warning {
+        box-shadow: none !important;
+    }
+
+    .btn {
+        box-shadow: none !important;
+    }
+    }
 </style>
 
 @section Scripts {
@@ -82,11 +96,11 @@
         }
         window.addEventListener('load', function () {
             document.querySelector("input[type='file']").addEventListener('change', function () {
-                    if (this.files && this.files[0]) {
-                        var img = document.getElementById("Preview");
-                        img.src = URL.createObjectURL(this.files[0]);
-                    }
-                });
+                if (this.files && this.files[0]) {
+                    var img = document.getElementById("Preview");
+                    img.src = URL.createObjectURL(this.files[0]);
+                }
+            });
         })
     </script>
 }

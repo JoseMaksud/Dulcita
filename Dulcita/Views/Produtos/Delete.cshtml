@@ -33,13 +33,25 @@
                             <div class="col-4 mb-3">
                                 <div class="input-group input-group-outline">
                                     <label asp-for="Preco" class="form-label"></label>
-                                    <input asp-for="Preco" class="form-control" readonly/>
+                                    <input asp-for="Preco" class="form-control" readonly />
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Categorias</label>
+                            <div>
+                                @foreach (var categoria in Model.Categorias)
+                                {
+                                    <span class="badge bg-danger me-2">@categoria.Categoria.Nome</span>
+                                }
+                            </div>
+                        </div>
+
+
                     </div>
                     <div class="col-lg-4 col-md-3 d-flex justify-content-center">
-                        <img id="Preview" src='@(Model.Imagem ?? Url.Content("~/img/sem-Imagem.jfif"))' class="w-75" alt="Imagem">
+                        <img id="Preview" src='~/@(Model.Imagem ?? Url.Content("~/img/sem-Imagem.jfif"))' class="w-75"
+                            alt="Imagem">
                     </div>
 
                     <div class="mb-3">
@@ -58,14 +70,18 @@
 </div>
 
 <style>
-  .bg-gradient-warning {
-    background: #ff007f !important;  
-  }
-  .shadow-warning {
-    box-shadow: none !important; 
-  }
-  .btn {
-    box-shadow: none !important;
-  }
-}
+    .bg-gradient-warning {
+        background: #ff007f !important;
+    }
+
+    .shadow-warning {
+        box-shadow: none !important;
+    }
+
+    .btn {
+        box-shadow: none !important;
+    }
+    .bg-danger {
+        background: #ff007f !important;
+    }
 </style>

@@ -33,17 +33,14 @@ namespace Dulcita.Controllers
         // GET: Produtos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var produto = await _context.Produtos
+                .Include(p => p.Categorias)
+                .ThenInclude(pc => pc.Categoria)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (produto == null)
-            {
-                return NotFound();
-            }
+
+            if (produto == null) return NotFound();
 
             return View(produto);
         }
@@ -108,16 +105,16 @@ namespace Dulcita.Controllers
         // GET: Produtos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var produto = await _context.Produtos.FindAsync(id);
-            if (produto == null)
-            {
-                return NotFound();
-            }
+            var produto = await _context.Produtos
+                .Include(p => p.Categorias)
+                .ThenInclude(pc => pc.Categoria)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (produto == null) return NotFound();
+
+            ViewData["Categorias"] = new MultiSelectList(_context.Categorias, "Id", "Nome", produto.Categorias.Select(pc => pc.CategoriaId));
             return View(produto);
         }
 
@@ -126,73 +123,78 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem")] Produto produto, IFormFile Arquivo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem")] Produto produto, IFormFile Arquivo, int[] CategoriasSelecionadas)
         {
-            if (id != produto.Id)
-            {
-                return NotFound();
-            }
+            if (id != produto.Id) return NotFound();
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                    // Upload da imagem (se necessário)
                     if (Arquivo != null && Arquivo.Length > 0)
                     {
                         var caminhoImagens = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/produtos");
-                        if (!Directory.Exists(caminhoImagens))
-                        {
-                            Directory.CreateDirectory(caminhoImagens);
-                        }
+                        if (!Directory.Exists(caminhoImagens)) Directory.CreateDirectory(caminhoImagens);
 
-                        // Nome único para o novo arquivo
                         var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(Arquivo.FileName);
                         var caminhoArquivo = Path.Combine(caminhoImagens, nomeArquivo);
 
-                        // Salvar o novo arquivo
                         using (var stream = new FileStream(caminhoArquivo, FileMode.Create))
                         {
                             await Arquivo.CopyToAsync(stream);
                         }
 
-                        // Atualizar o caminho da nova imagem no modelo
                         produto.Imagem = $"img/produtos/{nomeArquivo}";
                     }
-                    // Caso nenhuma nova imagem seja enviada, o campo `Imagem` mantém o valor atual.
 
-                    _context.Update(produto);
+                    // Atualizar produto
+                    _context.Entry(produto).State = EntityState.Modified;
+
+                    // Atualizar categorias associadas
+                    var categoriasExistentes = _context.ProdutoCategorias.Where(pc => pc.ProdutoNumero == produto.Id);
+                    _context.ProdutoCategorias.RemoveRange(categoriasExistentes);
+
+                    if (CategoriasSelecionadas != null)
+                    {
+                        foreach (var categoriaId in CategoriasSelecionadas)
+                        {
+                            var produtoCategoria = new ProdutoCategoria
+                            {
+                                ProdutoNumero = produto.Id,
+                                CategoriaId = categoriaId
+                            };
+                            _context.ProdutoCategorias.Add(produtoCategoria);
+                        }
+                    }
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!ProdutoExists(produto.Id))
-                    {
                         return NotFound();
-                    }
                     else
-                    {
                         throw;
-                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewData["Categorias"] = new MultiSelectList(_context.Categorias, "Id", "Nome", CategoriasSelecionadas);
             return View(produto);
         }
 
         // GET: Produtos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var produto = await _context.Produtos
+                .Include(p => p.Categorias)
+                .ThenInclude(pc => pc.Categoria)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (produto == null)
-            {
-                return NotFound();
-            }
+
+            if (produto == null) return NotFound();
 
             return View(produto);
         }
