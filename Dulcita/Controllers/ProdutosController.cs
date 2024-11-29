@@ -57,10 +57,15 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome,Ingredientes,Preco,Imagem")] Produto produto, IFormFile Arquivo, int[] CategoriasSelecionadas)
+        public async Task<IActionResult> Create([Bind("Nome,Ingredientes,Imagem")] Produto produto, IFormFile Arquivo, int[] CategoriasSelecionadas, string PrecoFormatado)
         {
+            ModelState.Remove("Preco"); // Ignora validação de Preco como número
+
             if (ModelState.IsValid)
             {
+                // Conversão manual do PrecoFormatado para decimal
+                produto.Preco = decimal.Parse(PrecoFormatado.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture);
+
                 if (Arquivo != null && Arquivo.Length > 0)
                 {
                     var caminhoImagens = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/produtos");
@@ -83,7 +88,6 @@ namespace Dulcita.Controllers
                 _context.Add(produto);
                 await _context.SaveChangesAsync();
 
-                // Associar as categorias selecionadas
                 foreach (var categoriaId in CategoriasSelecionadas)
                 {
                     var produtoCategoria = new ProdutoCategoria
@@ -123,15 +127,19 @@ namespace Dulcita.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Ingredientes,Preco,PrecoDesconto,Imagem")] Produto produto, IFormFile Arquivo, int[] CategoriasSelecionadas)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Ingredientes,Imagem")] Produto produto, IFormFile Arquivo, int[] CategoriasSelecionadas, string PrecoFormatado)
         {
             if (id != produto.Id) return NotFound();
+
+            ModelState.Remove("Preco"); // Ignora validação de Preco como número
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    // Upload da imagem (se necessário)
+                    // Conversão manual do PrecoFormatado para decimal
+                    produto.Preco = decimal.Parse(PrecoFormatado.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture);
+
                     if (Arquivo != null && Arquivo.Length > 0)
                     {
                         var caminhoImagens = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/produtos");
@@ -148,10 +156,8 @@ namespace Dulcita.Controllers
                         produto.Imagem = $"img/produtos/{nomeArquivo}";
                     }
 
-                    // Atualizar produto
                     _context.Entry(produto).State = EntityState.Modified;
 
-                    // Atualizar categorias associadas
                     var categoriasExistentes = _context.ProdutoCategorias.Where(pc => pc.ProdutoNumero == produto.Id);
                     _context.ProdutoCategorias.RemoveRange(categoriasExistentes);
 

@@ -37,10 +37,10 @@
                             </div>
                             <div class="col-4 mb-3">
                                 <div class="input-group input-group-outline">
-                                    <label asp-for="Preco" class="form-label"></label>
-                                    <input asp-for="Preco" class="form-control" />
+                                    <label for="PrecoFormatado" class="form-label">Preço</label>
+                                    <input type="text" id="PrecoFormatado" name="PrecoFormatado" class="form-control"
+                                        value="@(Model?.Preco != null ? Model.Preco.ToString("F2").Replace(".", ",") : "")" />
                                 </div>
-                                <span asp-validation-for="Preco" class="text-danger text-sm"></span>
                             </div>
                         </div>
                     </div>
