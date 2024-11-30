@@ -22,6 +22,18 @@ namespace Dulcita.Controllers
             return View(carrinho);
         }
 
+          public IActionResult ObterQuantidadeItens()
+    {
+        // Recupera o carrinho da sessão usando o SessionHelper
+        var carrinho = SessionHelper.GetCarrinho(HttpContext.Session);
+
+        // Soma a quantidade total de itens no carrinho
+        var quantidade = carrinho.Itens.Sum(i => i.Quantidade);
+
+        // Retorna o total como JSON
+        return Json(new { quantidade });
+    }
+
         // Adicionar produto ao carrinho
         public IActionResult Adicionar(int produtoId, int quantidade = 1)
         {

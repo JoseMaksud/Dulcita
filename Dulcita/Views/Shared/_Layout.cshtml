@@ -113,7 +113,10 @@
                                     <a href="#"><img src="~/img/icon/heart.png" alt=""></a> *@
                                 </div>
                                 <div class="header__top__right__cart">
-                                    <a asp-action="Index" asp-controller="Carrinho"><img src="~/img/icon/cart.png" alt=""></a>
+                                    <a asp-action="Index" asp-controller="Carrinho">
+                                        <img src="~/img/icon/cart.png" alt="Carrinho">
+                                        <span id="cart-count">0</span>
+                                    </a>
                                     <div class="cart__price"><span>Carrinho</span></div>
                                 </div>
                             </div>
@@ -146,6 +149,21 @@
                 </div>
             </div>
         </div>
+        <script>
+            function atualizarQuantidadeCarrinho() {
+    fetch('/Carrinho/ObterQuantidadeItens')
+        .then(response => response.json())
+        .then(data => {
+            // Atualiza o contador no elemento HTML
+            document.getElementById('cart-count').textContent = data.quantidade || 0;
+        })
+        .catch(error => console.error('Erro ao obter a quantidade do carrinho:', error));
+}
+
+// Atualiza o contador ao carregar a página
+document.addEventListener('DOMContentLoaded', atualizarQuantidadeCarrinho);
+
+        </script>
     </header>
     <div>
         <main role="main" class="pb-3">
@@ -154,12 +172,12 @@
     </div>
 
     <!-- Footer Section Begin -->
-        <link rel="stylesheet"
-            href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-        <a style="z-index: 1000;" id="robbu-whatsapp-button" target="_blank" 
-            href="https://api.whatsapp.com/send?phone=5514988270845&text=Ol%C3%A1%20gostaria%20de%20comprar%20um%20donuts"> 
-            <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg" >
-        </a>
+    <link rel="stylesheet"
+        href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+    <a style="z-index: 1000;" id="robbu-whatsapp-button" target="_blank"
+        href="https://api.whatsapp.com/send?phone=5514988270845&text=Ol%C3%A1%20gostaria%20de%20comprar%20um%20donuts">
+        <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+    </a>
     <footer class="footer set-bg" data-setbg="/img/footer-bg.jpg">
         <div class="container">
             <div class="row">
@@ -180,9 +198,13 @@
                         </div>
                         <p>A Melhor loja de donuts</p>
                         <div class="footer__social">
-                            <a target="_blank" href="https://www.instagram.com/donutsdulcitabbonita/"><i class="fa fa-facebook"></i></a>
-                            <a target="_blank" href="https://www.facebook.com/donutsdulcita/"><i class="fa fa-instagram"></i></a>
-                            <a target="_blank" href="https://api.whatsapp.com/send?phone=5514988270845&text=Ol%C3%A1%20gostaria%20de%20comprar%20um%20donuts"><i class="fa fa-whatsapp"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/donutsdulcitabbonita/"><i
+                                    class="fa fa-facebook"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/donutsdulcita/"><i
+                                    class="fa fa-instagram"></i></a>
+                            <a target="_blank"
+                                href="https://api.whatsapp.com/send?phone=5514988270845&text=Ol%C3%A1%20gostaria%20de%20comprar%20um%20donuts"><i
+                                    class="fa fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
