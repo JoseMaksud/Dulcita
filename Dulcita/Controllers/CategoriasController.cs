@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Dulcita.Data;
 using Dulcita.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Dulcita.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class CategoriasController : Controller
     {
         private readonly AppDbContext _context;
