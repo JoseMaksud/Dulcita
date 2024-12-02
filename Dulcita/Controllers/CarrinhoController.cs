@@ -3,11 +3,9 @@ using Dulcita.Models;
 using Dulcita.Helpers; 
 using System.Linq;
 using Dulcita.Data;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Dulcita.Controllers
 {
-    [Authorize(Roles = "Administrador")]
     public class CarrinhoController : Controller
     {
         private readonly AppDbContext _context;
